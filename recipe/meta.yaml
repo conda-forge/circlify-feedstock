@@ -1,5 +1,5 @@
 {% set name = "circlify" %}
-{% set version = "0.15.0" %}
+{% set version = "0.15.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,17 +7,18 @@ package:
 
 source:
   url: https://github.com/elmotec/circlify/archive/refs/tags/v{{ version }}.tar.gz
-  sha256: 558381b1ec1a6cba5d49067c1ad9c8da6026928403445fe83b003eed56a0ba64
+  sha256: d168822e6e2690a09d79a7a5485e916bb144f003c0e75e809a411f1c81f8366e
 
 build:
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
-  number: 1
+  number: 0
 
 requirements:
   host:
     - pip
     - python {{ python_min }}
+    - setuptools
   run:
     - python >={{ python_min }}
 
